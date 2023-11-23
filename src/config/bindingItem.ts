@@ -41,6 +41,7 @@ export interface TransientBindingItem extends CommandItem {
     icon?: string;
     display?: DisplayOption;
     exit?: boolean;
+    hide?: boolean;
 }
 
 export function toBindingItem(o: any): BindingItem | undefined {

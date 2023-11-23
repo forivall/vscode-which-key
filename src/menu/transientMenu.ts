@@ -28,7 +28,9 @@ class TransientMenu extends BaseWhichKeyMenu<TransientBindingItem> {
 
     protected override async handleAccept(item: TransientBindingItem):
         Promise<OptionalTransientMenuState> {
-        await this.hide();
+        if (item.hide !== false) {
+            await this.hide();
+        }
         const { commands, args } = toCommands(item);
         await executeCommands(commands, args);
 
